@@ -19,7 +19,7 @@ class NewUserForm extends Component {
     this.setState({
       firstName: "",
       lastName: "",
-    })
+    });
   };
 
   handleFirstNameChange = e => {
@@ -28,7 +28,7 @@ class NewUserForm extends Component {
 
   handleLastNameChange = e => {
     this.setState({lastName: e.target.value});
-  }
+  };
 
   render() {
     return (

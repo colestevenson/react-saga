@@ -1,7 +1,7 @@
 import React from 'react';
 import { ListGroup, ListGroupItem, Button } from 'reactstrap';
 
-const UsersList = ({users}) => {
+const UsersList = ({users, onDeleteUser}) => {
   return(
     <ListGroup>
       {users.sort((a, b) => {
@@ -14,8 +14,8 @@ const UsersList = ({users}) => {
         } else if (a.lastName < b.lastName) {
           return -1;
         } else {
-          return 0
-        }
+          return 0;
+        };
       }).map((user) => {
         return (
           <ListGroupItem key={user.id}>
@@ -26,7 +26,7 @@ const UsersList = ({users}) => {
               </div>
 
               <div>
-                <Button outline color="danger">
+                <Button outline color="danger" onClick={() => onDeleteUser(user.id)}>
                   Delete
                 </Button>
               </div>
